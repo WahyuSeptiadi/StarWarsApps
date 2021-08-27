@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.wahyu.starwars.R
 import com.wahyu.starwars.databinding.FragmentHomeBinding
+import com.wahyu.starwars.utils.toast
 import com.wahyu.starwars.viewmodels.FilmViewModel
 
 class HomeFragment : Fragment() {
@@ -33,10 +34,11 @@ class HomeFragment : Fragment() {
 
             filmViewModel.films.observe(viewLifecycleOwner, { films ->
                 if (films.isEmpty()) {
-                    Toast.makeText(context, "null bro", Toast.LENGTH_SHORT).show()
+                    toast("Film is empty :(")
                 } else {
                     val listFilms = films.map {
-                        "${it.title}\n- ${it.created}"
+                        "${it.title}\n\n" + "Release \t\t= ${it.releaseDate}\n" +
+                                "Director \t\t= ${it.director}\n" + "Producer \t= ${it.producer}"
                     }
 
                     binding.lvFilm.adapter =

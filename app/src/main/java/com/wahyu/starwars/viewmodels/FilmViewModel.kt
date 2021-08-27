@@ -53,4 +53,28 @@ class FilmViewModel : ViewModel() {
             }
         })
     }
+
+    fun searchFilmStarWars(title: String): LiveData<List<ResultsItem>> {
+        _isLoading.value = true
+        val client = ApiConfig.getApiService().searchFilm(title)
+        client.enqueue(object : Callback<FilmResponse> {
+            override fun onResponse(
+                call: Call<FilmResponse>,
+                response: Response<FilmResponse>
+            ) {
+                _isLoading.value = false
+                if (response.isSuccessful) {
+                    _films.value = response.body()?.results
+                } else {
+                    Log.e(TAG, "onFailure: ${response.message()}")
+                }
+            }
+
+            override fun onFailure(call: Call<FilmResponse>, t: Throwable) {
+                _isLoading.value = false
+                Log.e(TAG, "onFailure: ${t.message.toString()}")
+            }
+        })
+        return _films
+    }
 }
