@@ -6,4 +6,5 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="dot">…</string>
     <string name="search_title_film">Search Title Film</string>
+    <string name="todo">todo</string>
 </resources>

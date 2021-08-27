@@ -40,7 +40,9 @@
         android:id="@+id/lv_film_search"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/search_film" />
+        android:layout_below="@+id/search_film"
+        android:paddingStart="15dp"
+        android:paddingEnd="5dp" />
 
     <ProgressBar
         android:id="@+id/progress_bar"
