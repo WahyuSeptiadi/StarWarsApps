@@ -29,15 +29,12 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         if (activity != null) {
-//            filmViewModel = ViewModelProvider(this, defaultViewModelProviderFactory)[FilmViewModel::class.java]
             filmViewModel = ViewModelProvider(this).get(FilmViewModel::class.java)
 
             filmViewModel.films.observe(viewLifecycleOwner, { films ->
                 if (films.isEmpty()) {
                     Toast.makeText(context, "null bro", Toast.LENGTH_SHORT).show()
                 } else {
-//                    binding.topBar.text = films[0].title
-
                     val listFilms = films.map {
                         "${it.title}\n- ${it.created}"
                     }
