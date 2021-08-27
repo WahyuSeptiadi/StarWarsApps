@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/dark_light"
     tools:context=".ui.profile.ProfileFragment">
 
     <TextView
@@ -10,11 +11,35 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_centerHorizontal="true"
-        android:background="@color/dark_light"
+        android:background="@color/dark_full"
         android:gravity="center"
         android:text="@string/profile"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/top_bar"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/image"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@mipmap/ic_logo_apps_round" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/creator"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </LinearLayout>
+
 
 </RelativeLayout>
