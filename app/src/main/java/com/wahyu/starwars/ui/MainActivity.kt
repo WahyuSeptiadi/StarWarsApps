@@ -8,10 +8,12 @@ import com.wahyu.starwars.databinding.ActivityMainBinding
 import com.wahyu.starwars.ui.home.HomeFragment
 import com.wahyu.starwars.ui.profile.ProfileFragment
 import com.wahyu.starwars.ui.search.SearchFragment
+import com.wahyu.starwars.viewmodels.FilmViewModel
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+//    private val filmViewModel : FilmViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
